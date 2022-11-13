@@ -1,3 +1,5 @@
+#include <X11/XF86keysym.h>
+
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -94,6 +96,14 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify") },
+	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 dwmblocks") },
+	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 dwmblocks") },
+	{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 dwmblocks") },
+	{ 0, XF86XK_AudioPlay,                     spawn,          SHCMD("playerctl play-pause") },
+	{ 0, XF86XK_AudioNext,                     spawn,          SHCMD("playerctl next") },
+	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") }
 };
 
 /* button definitions */
