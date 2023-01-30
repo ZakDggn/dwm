@@ -70,7 +70,8 @@ static const char *termcmd[]  = { "alacritty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("rofi -modi drun,run -show drun") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -111,7 +112,12 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 dwmblocks") },
 	{ 0, XF86XK_AudioPlay,                     spawn,          SHCMD("playerctl play-pause") },
 	{ 0, XF86XK_AudioNext,                     spawn,          SHCMD("playerctl next") },
-	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") }
+	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") },
+	{ 0, XF86XK_MonBrightnessUp,               spawn,          SHCMD("~/setup-scripts/backlight -A") },
+	{ 0, XF86XK_MonBrightnessDown,             spawn,          SHCMD("~/setup-scripts/backlight -U") },
+	{ MODKEY, XK_n,                            spawn,          SHCMD("dunstctl history-pop") },
+	{ MODKEY|ShiftMask, XK_n,                  spawn,          SHCMD("dunstctl close") },
+	{ MODKEY, XK_Escape,                       spawn,          SHCMD("i3lock-fancy") }
 };
 
 /* button definitions */
