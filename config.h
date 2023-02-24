@@ -106,6 +106,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("systemctl suspend") },
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify") },
 	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 dwmblocks") },
 	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 dwmblocks") },
