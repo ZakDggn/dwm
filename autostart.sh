@@ -8,3 +8,4 @@ setxkbmap -option caps:escape &
 ~/setup-scripts/low-battery-warning 10 120 &
 earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$' &
 systembus-notify &
+unclutter &
