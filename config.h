@@ -114,8 +114,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioPlay,                     spawn,          SHCMD("playerctl play-pause") },
 	{ 0, XF86XK_AudioNext,                     spawn,          SHCMD("playerctl next") },
 	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") },
-	{ 0, XF86XK_MonBrightnessUp,               spawn,          SHCMD("~/setup-scripts/backlight -A") },
-	{ 0, XF86XK_MonBrightnessDown,             spawn,          SHCMD("~/setup-scripts/backlight -U") },
+	{ 0, XF86XK_MonBrightnessUp,               spawn,          SHCMD("~/dwm/backlight.sh -A") },
+	{ 0, XF86XK_MonBrightnessDown,             spawn,          SHCMD("~/dwm/backlight.sh -U") },
 	{ MODKEY, XK_n,                            spawn,          SHCMD("dunstctl history-pop") },
 	{ MODKEY|ShiftMask, XK_n,                  spawn,          SHCMD("dunstctl close") },
 	{ MODKEY, XK_Escape,                       spawn,          SHCMD("i3lock-fancy") }
