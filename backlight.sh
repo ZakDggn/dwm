@@ -15,10 +15,10 @@ if (( $(echo "$change < $minChange" | bc) )); then
   change=$minChange
 fi
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
   light -G
-elif [ $1 = '-A' ]; then
-  light -A $change
-elif [ $1 = '-U' ]; then
-  light -U $change
+elif [ "$1" = '-A' ]; then
+  light -A "$change"
+elif [ "$1" = '-U' ]; then
+  light -U "$change"
 fi
