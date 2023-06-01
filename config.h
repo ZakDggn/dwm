@@ -14,7 +14,7 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono:size=10", "JetBrainsMono Nerd Font:size=14" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "JetBrains Mono:size=10";
 static const char col_gray1[]       = "#1a1b26";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#a9b1d6";
@@ -109,6 +109,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_q,      spawn,          SHCMD("poweroff") },
 
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("~/dwm/lock-then-suspend.sh") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
@@ -123,7 +124,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_MonBrightnessDown,             spawn,          SHCMD("~/dwm/backlight.sh -U") },
 	{ MODKEY, XK_n,                            spawn,          SHCMD("dunstctl history-pop") },
 	{ MODKEY|ShiftMask, XK_n,                  spawn,          SHCMD("dunstctl close") },
-	{ MODKEY, XK_Escape,                       spawn,          SHCMD("i3lock-fancy") }
+	{ MODKEY, XK_Escape,                       spawn,          SHCMD("i3lock-fancy") },
+	{ 0, XK_Print,                             spawn,          SHCMD("xfce4-screenshooter") },
 };
 
 /* button definitions */
