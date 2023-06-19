@@ -18,7 +18,7 @@ static const char dmenufont[]       = "JetBrains Mono:size=10";
 static const char col_gray1[]       = "#1a1b26";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#a9b1d6";
-static const char col_gray4[]       = "#32344a";
+static const char col_gray4[]       = "#1a1b26";
 static const char col_cyan[]        = "#7aa2f7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -114,9 +114,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("~/dwm/lock-then-suspend.sh") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify") },
-	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 dwmblocks") },
-	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 dwmblocks") },
-	{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 dwmblocks") },
+	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("pamixer --increase 5 && pkill -RTMIN+1 dwmblocks") },
+	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("pamixer --decrease 5 && pkill -RTMIN+1 dwmblocks") },
+	{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("pamixer --toggle-mute && pkill -RTMIN+1 dwmblocks") },
 	{ 0, XF86XK_AudioPlay,                     spawn,          SHCMD("playerctl play-pause") },
 	{ 0, XF86XK_AudioNext,                     spawn,          SHCMD("playerctl next") },
 	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") },
