@@ -11,3 +11,4 @@ setxkbmap -layout gb -option caps:ctrl_modifier; xcape -e '#66=Escape'
 earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$' &
 systembus-notify &
 unclutter &
+xidlehook --timer 900 "xset dpms force off" "" --timer 10 "systemctl suspend" "" &

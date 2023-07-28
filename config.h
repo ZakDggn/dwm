@@ -111,7 +111,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask|ControlMask, XK_q,      spawn,          SHCMD("poweroff") },
 
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("~/dwm/lock-then-suspend.sh") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("systemctl suspend") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify") },
 	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("pamixer --increase 5 && pkill -RTMIN+1 dwmblocks") },
