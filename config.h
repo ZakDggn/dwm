@@ -122,6 +122,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") },
 	{ 0, XF86XK_MonBrightnessUp,               spawn,          SHCMD("xbacklight -perceived +5") },
 	{ 0, XF86XK_MonBrightnessDown,             spawn,          SHCMD("xbacklight -perceived -5") },
+	{ ShiftMask, XF86XK_MonBrightnessDown,     spawn,          SHCMD("xbacklight -set 1") },
+	{ ShiftMask, XF86XK_MonBrightnessUp,       spawn,          SHCMD("xbacklight -set 100") },
 	{ MODKEY, XK_n,                            spawn,          SHCMD("dunstctl history-pop") },
 	{ MODKEY|ShiftMask, XK_n,                  spawn,          SHCMD("dunstctl close") },
 	{ MODKEY, XK_Escape,                       spawn,          SHCMD("i3lock-fancy") },
