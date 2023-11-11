@@ -3,7 +3,7 @@
 nitrogen --restore &
 dwmblocks &
 dunst &
-redshift-gtk -l 51:0 &
+redshift-gtk -l 51:0 -t 6500:3000 &
 picom -b &
 nm-applet &
 #setxkbmap -option caps:ctrl_modifier; xcape -e '#66=Escape'
@@ -13,6 +13,6 @@ earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$' &
 systembus-notify &
 unclutter &
 #easyeffects --gapplication-service &
-xset dpms 0 0 300
+xset dpms 0 0 300 &
 xidlehook --not-when-audio --timer 600 "xset dpms force standby" "" --timer 10 "systemctl suspend" "" &
-/usr/bin/syncthing serve --no-browser --logfile=default
+/usr/bin/syncthing serve --no-browser --logfile=default &
