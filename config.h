@@ -37,7 +37,6 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ NULL,       NULL,       NULL,       0,            False,       -1 },
-	{ "mpv",      NULL,       NULL,       0,            True,       -1 },
 };
 
 /* layout(s) */
