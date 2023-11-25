@@ -1,19 +1,23 @@
 #!/bin/bash
 
-nitrogen --restore &
-dwmblocks &
-dunst &
-redshift-gtk -l 51:0 -t 6500:3000 &
-picom -b &
-nm-applet &
-#setxkbmap -option caps:ctrl_modifier; xcape -e '#66=Escape'
-~/dwm/low-battery-warning.sh 10 120 &
-~/dwm/full-battery-notification.sh 90 120 &
-earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$' &
-systembus-notify &
-unclutter &
-#easyeffects --gapplication-service &
-xset dpms 0 0 300 &
-xidlehook --not-when-audio --timer 600 "xset dpms force standby" "" --timer 10 "systemctl suspend" "" &
-#/usr/bin/syncthing serve --no-browser --logfile=default &
-~/dwm/keyd-indicator &
+function start {
+  cmd_name=$(basename "$1")
+  grep -q "$cmd_name" <<< "$running" || "$@" &
+}
+
+running="$(ps aux)"
+
+start nitrogen --restore
+start dwmblocks
+start ~/dwm/low-battery-warning.sh 10 300
+start ~/dwm/full-battery-notification.sh 90 600
+start picom -b
+start dunst
+start redshift-gtk -l 51:0 -t 6500:3000
+start nm-applet
+start earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$'
+start systembus-notify
+start unclutter
+start xset dpms 0 0 300
+start xidlehook --not-when-audio --timer 600 "xset dpms force standby" "" --timer 10 "systemctl suspend" ""
+start ~/dwm/keyd-indicator
