@@ -1,0 +1,12 @@
+#!/bin/bash
+
+keyd listen | while read x; do
+  case "$x" in
+    '+colemak_dh')
+      xset led 3
+      ;;
+    '-colemak_dh')
+      xset -led 3
+      ;;
+  esac
+done
