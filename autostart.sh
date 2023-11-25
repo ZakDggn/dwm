@@ -15,4 +15,4 @@ unclutter &
 #easyeffects --gapplication-service &
 xset dpms 0 0 300 &
 xidlehook --not-when-audio --timer 600 "xset dpms force standby" "" --timer 10 "systemctl suspend" "" &
-/usr/bin/syncthing serve --no-browser --logfile=default &
+#/usr/bin/syncthing serve --no-browser --logfile=default &
