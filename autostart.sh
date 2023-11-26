@@ -21,3 +21,4 @@ start unclutter
 start xset dpms 0 0 300
 start xidlehook --not-when-audio --timer 600 "xset dpms force standby" "" --timer 10 "systemctl suspend" ""
 start ~/dwm/keyd-indicator
+start wmname LG3D

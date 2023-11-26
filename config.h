@@ -13,7 +13,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono:size=11", "JetBrainsMono Nerd Font:size=14" };
+static const char *fonts[]          = { "JetBrains Mono:size=11", "Symbols Nerd Font:size=14" };
 static const char dmenufont[]       = "JetBrains Mono:size=10";
 static const char norm_fg[]         = "#DDDDDD";
 static const char norm_bg[]         = "#11111B";
@@ -118,6 +118,7 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("pamixer --decrease 5 && pkill -RTMIN+1 dwmblocks") },
 	{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("pamixer --toggle-mute && pkill -RTMIN+1 dwmblocks") },
 	{ 0, XF86XK_AudioPlay,                     spawn,          SHCMD("playerctl play-pause") },
+	{ 0, XF86XK_AudioStop,                     spawn,          SHCMD("playerctl --all-players stop") },
 	{ 0, XF86XK_AudioNext,                     spawn,          SHCMD("playerctl next") },
 	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") },
 	{ 0, XF86XK_MonBrightnessUp,               spawn,          SHCMD("xbacklight -perceived +5") },
