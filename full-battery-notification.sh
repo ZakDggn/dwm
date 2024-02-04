@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if ! command -v acpi &> /dev/null; then
+  exit
+fi
+
 if [ -z "$1" ] || [ -z "$2" ]; then
   echo "Full battery threshold and time interval not provided"
   exit 1
